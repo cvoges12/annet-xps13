@@ -40,7 +40,7 @@
     ## LaTex / md
     biber
     pandoc
-    #tetex # may remove
+    #tetex # might remove
     texlive.combined.scheme-full
 
     # media
