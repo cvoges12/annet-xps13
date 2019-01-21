@@ -27,6 +27,15 @@
       };
     };
 
+    cron = {
+      enable = true;
+      systemCronJobs = [
+        "0 0 1 * *        root        tmpwatch -maf 240 /tmp"
+        "0 3 * * *        root        nix-collect-garbage -d"
+        "30 3 * * *       root        nix-store --optimize"
+      ];
+    };
+
     # Enable Android udev rules
     udev.packages = with pkgs; [
       android-udev-rules

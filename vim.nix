@@ -5,13 +5,14 @@ neovim.override {
     customRC = ''
       
       " search.vim
-      set incsearch
-      set hlsearch
-      nnoremap <leader><space> :nohlsearch<CR>
+      "set incsearch
+      "set hlsearch
+      "nnoremap <leader><space> :nohlsearch<CR>
       
       
       " settings.vim
       set nocompatible
+      let mapleader =" "
       
       set number relativenumber
       augroup numbertoggle
@@ -31,15 +32,25 @@ neovim.override {
       let g:syntastic_check_on_open = 1
       let g:syntastic_check_on_wq = 0
 
+
+      " LaTeX
+      map <leader>c :w! \| !pdflatex <c-r>%<CR><CR>
+	  " autocmd VimLeave *.tex !texclear.sh %
+
       
       " ui.vim
       set showcmd
       set cursorline
       filetype indent on
-      set wildmenu
       set lazyredraw
       set showmatch
-      
+      set laststatus=2
+      set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{strftime(\"%d/%m/%y\ -\ %H:%M\")}
+
+      " wildmenu
+      set wildmenu
+      set wildmode=list:longest,full wildmenu
+
       
       " whitespace.vim
       set tabstop=4
@@ -131,23 +142,21 @@ neovim.override {
       "" M = mid screen
       "" I = bot screen
       nnoremap I L|vnoremap I L|
-      "" C-h = page up
-      "" C-i = page down
-      nnoremap <C-H> <C-F>|vnoremap <C-H> <C-F>|
-      nnoremap <C-I> <C-B>|vnoremap <C-I> <C-B>|
-      "" C-e = scroll up (in motion)
-      "" C-n = scroll down (in motion)
-      nnoremap <C-E> <C-Y>|vnoremap <C-E> <C-Y>|
-      nnoremap <C-N> <C-E>|vnoremap <C-N> <C-E>|
       "" E = half page up
       "" N = half page down
       nnoremap E <C-U>|vnoremap E <C-U>|
       nnoremap N <C-D>|vnoremap N <C-D>|
+
+      " Split Navigation
+      nnoremap <C-h> <C-w>h
+      nnoremap <C-n> <C-w>j
+      nnoremap <C-e> <C-w>k
+      nnoremap <C-i> <C-w>l
                                                                                  
     '';
     packages.myVimPackage = with pkgs.vimPlugins; {
-      start = [ idris-vim YouCompleteMe Syntastic];
-      opt = [ ];
+      start = [ idris-vim YouCompleteMe Syntastic ];
+      opt = [ vim-latex-live-preview ];
     };
   };
 }

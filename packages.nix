@@ -18,10 +18,12 @@
     zip
 
     # desktop utilities
+    feh
     khal
     khard
     ranger
     vdirsyncer    # khal and khard synchronizer
+    zlib # for taskell
 
     # communication / rss
     #neomutt
@@ -36,9 +38,10 @@
     (import ./vim.nix)
     zathura
     ## LaTex / md
+    biber
     pandoc
-    tetex
-    rPackages.knitr
+    #tetex # may remove
+    texlive.combined.scheme-full
 
     # media
     #cava    # music visualizer
@@ -68,13 +71,19 @@
     clang
     dialog
     ghc
+    haskellPackages.ghcid
+    haskellPackages.hnix
+    haskellPackages.stack
+    #haskellPackages.vcard
     idris
     llvm
     #nix-repl
+    nodejs
     python27Full
     python36Full
     python37Full
     zsh
+
 
     # security                                                                                                                
     #aircrack-ng
@@ -92,8 +101,8 @@
 
     # system utilities
     psmisc
-    termite
     tree
+    tmpwatch
 
     # window manager
     cairo # required by i3lock
@@ -111,19 +120,19 @@
     xorg.xcbutilwm
     xorg.xinit
     ## transparency
-    compton
+    #compton
     ## misc
     redshift
     pywal
 
     # web browsers
     firefox
-    qutebrowser
-    w3m
+    #w3m
 
     # misc
     libnotify
     openjdk
+    scrot
     wine
   ];
 
