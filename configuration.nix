@@ -45,20 +45,6 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users = {
     extraUsers = {
-      
-      # Midi
-      storm = {
-        description = "Midi Storm";
-        createHome = true;
-        home = "/home/storm";
-        isNormalUser = true;
-        uid = 1000;
-        extraGroups = [ 
-          "wheel" "disk" "audio" "video"
-          "networkmanager" "systemd-journal"
-        ];
-        shell = pkgs.zsh;
-      };
 
       # Clayton
       cvoges12 = {
