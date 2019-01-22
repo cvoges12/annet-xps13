@@ -61,12 +61,12 @@
       };
 
       # Clayton
-      cvoges = {
+      cvoges12 = {
         description = "Clayton Voges";
         createHome = true;
-        home = "/home/cvoges";
+        home = "/home/cvoges12";
         isNormalUser = true;
-        uid = 1001;
+        uid = 1002;
         extraGroups = [ 
           "wheel" "disk" "audio" "video"
           "networkmanager" "systemd-journal"
