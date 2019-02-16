@@ -23,7 +23,8 @@
     khard
     ranger
     vdirsyncer    # khal and khard synchronizer
-    zlib # for taskell
+    taskwarrior
+    #haskellPackages.termonad    # add when fixed
 
     # communication / rss
     #neomutt
@@ -75,6 +76,8 @@
     haskellPackages.hnix
     haskellPackages.stack
     #haskellPackages.vcard
+    cabal2nix
+    stack2nix
     idris
     llvm
     #nix-repl

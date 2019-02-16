@@ -23,6 +23,10 @@
           enable = true;
           package = pkgs.i3-gaps;
         };
+        xmonad = {
+          enable = true;
+          #enableContribAndExtras = true;
+        };
         default = "i3";
       };
     };
